@@ -28,7 +28,7 @@ setup(
 	author_email='petermelias@gmail.com',
 	description='Boilerplate code across various layers of flask, including domain abstractions.',
 	long_description=__doc__,
-	packages=['flask_boilerplate', 'flask_boilerplate.views'],
+	packages=['flask_boilerplate', 'flask_boilerplate.views', 'flask_boilerplate.models'],
 	zip_safe=False,
 	include_package_data=True,
 	platforms='any',

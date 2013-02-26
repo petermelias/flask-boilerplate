@@ -1,7 +1,7 @@
 from flask import current_app, redirect, request
 
 from functools import wraps
-from flask.ext.boilerplate.models import FriendlyException
+from flask_boilerplate.models import FriendlyException
 
 def friendly_errors(bomb_endpoint=None, xhr=False, fragment=None):
     def _decorator(f):
