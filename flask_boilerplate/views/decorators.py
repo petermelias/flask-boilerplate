@@ -1,6 +1,8 @@
 from flask import current_app, redirect, request
 
-def friendly_errors(bomb_endpoint=None, va=None, xhr=False, fragment=None):
+from functools import wraps
+
+def friendly_errors(bomb_endpoint=None, xhr=False, fragment=None):
     def _decorator(f):
         @wraps(f)
         def _wrapper(*args, **kwargs):
