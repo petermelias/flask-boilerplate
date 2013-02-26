@@ -1,4 +1,4 @@
-from flask import current_app, redirect, request, flash
+from flask import current_app, redirect, request, flash, url_for
 
 from functools import wraps
 from flask_boilerplate.models import FriendlyException
