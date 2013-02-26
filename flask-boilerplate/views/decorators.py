@@ -4,7 +4,7 @@ def friendly_errors(bomb_endpoint=None, va=None, xhr=False, fragment=None):
     def _decorator(f):
         @wraps(f)
         def _wrapper(*args, **kwargs):
-            if current_app.config.get('MODE') == 'testing':
+            if current_app.config.get('MODE') == 'testing': # this allows tests to assert the expected exception
                 return f(*args, **kwargs)
             try:
                 result = f(*args, **kwargs)
