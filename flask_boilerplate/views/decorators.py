@@ -1,4 +1,4 @@
-from flask import current_app, redirect, request
+from flask import current_app, redirect, request, flash
 
 from functools import wraps
 from flask_boilerplate.models import FriendlyException
@@ -16,9 +16,8 @@ def friendly_errors(bomb_endpoint=None, xhr=False, fragment=None):
                 if xhr:
                     return str(e)
                 flash(str(e))
-                red_ep = bomb_endpoint
-                if not red_ep:
-                    red_ep = request.endpoint
-                return redirect(url_for(red_ep, _anchor=fragment, **request.view_args))
+                if not bomb_endpoint:
+                    bomb_endpoint = request.endpoint
+                return redirect(url_for(bomb_endpoint, _anchor=fragment, **request.view_args))
         return _wrapper
     return _decorator
