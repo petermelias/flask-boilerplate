@@ -17,7 +17,7 @@ sufficiently abstract to begin with.
 	
 """
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
 	name='Flask-Boilerplate',
@@ -28,7 +28,7 @@ setup(
 	author_email='petermelias@gmail.com',
 	description='Boilerplate code across various layers of flask, including domain abstractions.',
 	long_description=__doc__,
-	packages=['flask_boilerplate', 'flask_boilerplate.views', 'flask_boilerplate.models'],
+	packages=find_packages(),
 	zip_safe=False,
 	include_package_data=True,
 	platforms='any',
@@ -45,5 +45,4 @@ setup(
 		'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
 		'Topic :: Software Development :: Libraries :: Python Modules'
 	],
-	test_suite='tests'
 )
